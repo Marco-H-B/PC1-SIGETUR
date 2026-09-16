@@ -1,0 +1,213 @@
+<mxfile host="app.diagrams.net" agent="Antigravity" pages="2">
+  <diagram id="diag_cun" name="1. Casos de Uso del Negocio (CUN)">
+    <mxGraphModel dx="1875" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_cun" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;fontColor=#002D62;" value="&lt;b&gt;DIAGRAMA DE CASOS DE USO DEL NEGOCIO (CUN) - PERÚ TOURS (SIGETUR)&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="650" x="380" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="org_boundary" parent="1" style="shape=folder;fontStyle=1;tabWidth=220;tabHeight=30;tabPosition=left;html=1;boundedLbl=1;fillColor=#f8f9fa;strokeColor=#002D62;strokeWidth=2;align=center;verticalAlign=top;spacingTop=10;" value="Agencia de Viajes PERÚ TOURS" vertex="1">
+          <mxGeometry height="650" width="770" x="290" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="obj1" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;" value="&lt;b&gt;ON-01:&lt;/b&gt; Reducir tiempo de cotización a &amp;lt; 4 hrs" vertex="1">
+          <mxGeometry height="60" width="180" x="340" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="obj2" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;" value="&lt;b&gt;ON-02:&lt;/b&gt; Aumentar conversión de socios en 40%" vertex="1">
+          <mxGeometry height="60" width="180" x="540" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="obj3" parent="1" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;" value="&lt;b&gt;ON-03:&lt;/b&gt; Recuperar 25% de cotizaciones observadas" vertex="1">
+          <mxGeometry height="60" width="190" x="740" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="an1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="&amp;lt;&amp;lt;Business Actor&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;AN-01: Cliente Turista&lt;/b&gt;&lt;br&gt;(No Socio / Socio)" vertex="1">
+          <mxGeometry height="110" width="60" x="350" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="an2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;strokeWidth=2;" value="&amp;lt;&amp;lt;Business Actor&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;AN-02: Pasarela Bancaria&lt;/b&gt;&lt;br&gt;(Entidad Financiera)" vertex="1">
+          <mxGeometry height="110" width="60" x="350" y="435" as="geometry" />
+        </mxCell>
+        <mxCell id="tn1" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="&amp;lt;&amp;lt;Business Worker&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;TN-01: Agente Receptivo&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="60" x="940" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="tn2" parent="1" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#d5e8d4;strokeColor=#82b366;strokeWidth=2;" value="&amp;lt;&amp;lt;Business Worker&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;TN-02: Gerente Agencia&lt;/b&gt;" vertex="1">
+          <mxGeometry height="110" width="60" x="940" y="555" as="geometry" />
+        </mxCell>
+        <mxCell id="cun1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontStyle=0;fontSize=13;" value="&amp;lt;&amp;lt;Business Use Case&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CUN-01: Afiliar Cliente a Socio&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="260" x="550" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="cun2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontStyle=0;fontSize=13;" value="&amp;lt;&amp;lt;Business Use Case&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CUN-02: Cotizar Paquete Turístico&lt;/b&gt;&lt;br&gt;(Solicitud, Cotización y Observación)" vertex="1">
+          <mxGeometry height="80" width="280" x="540" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="cun3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontStyle=0;fontSize=13;" value="&amp;lt;&amp;lt;Business Use Case&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CUN-03: Gestionar Venta y Cobro de Paquete&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="280" x="540" y="450" as="geometry" />
+        </mxCell>
+        <mxCell id="cun4" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;strokeWidth=2;fontStyle=0;fontSize=13;" value="&amp;lt;&amp;lt;Business Use Case&amp;gt;&amp;gt;&lt;br&gt;&lt;b&gt;CUN-04: Auditar y Controlar Cotizaciones&lt;/b&gt;&lt;br&gt;(Canceladas y Observadas por Fecha)" vertex="1">
+          <mxGeometry height="80" width="280" x="540" y="570" as="geometry" />
+        </mxCell>
+        <mxCell id="edge1" edge="1" parent="1" source="an1" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cun1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge2" edge="1" parent="1" source="an1" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cun2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge3" edge="1" parent="1" source="an1" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cun3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge4" edge="1" parent="1" source="an2" style="endArrow=none;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="cun3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge5" edge="1" parent="1" source="cun2" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="tn1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge6" edge="1" parent="1" source="cun3" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="tn1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge7" edge="1" parent="1" source="cun4" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="tn1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge8" edge="1" parent="1" source="cun4" style="endArrow=none;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" target="tn2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="diag_act" name="2. Diagrama de Actividades (Swimlanes)">
+    <mxGraphModel dx="2308" dy="988" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title_act" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=15;fontColor=#002D62;" value="&lt;b&gt;DIAGRAMA DE ACTIVIDADES CON CARRILES (SWIMLANES): COTIZACIÓN Y VENTA DE PAQUETES TURÍSTICOS&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="850" x="280" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="pool" parent="1" style="swimlane;childLayout=stackLayout;resizeParent=1;resizeParentMax=0;startSize=30;horizontal=0;horizontalFlip=1;fillColor=#f8f9fa;strokeColor=#002D62;strokeWidth=2;" value="Proceso de Cotización, Atención de Observaciones, Pago y Auditoría" vertex="1">
+          <mxGeometry height="980" width="1380" x="40" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_socio" parent="pool" style="swimlane;startSize=30;fillColor=#dae8fc;strokeColor=#6c8ebf;html=1;" value="&lt;b&gt;:Cliente Socio&lt;/b&gt;" vertex="1">
+          <mxGeometry height="980" width="340" x="30" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-1" edge="1" parent="lane_socio" source="start_node" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="act_solicitar" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="start_node" parent="lane_socio" style="ellipse;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="155" y="50" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-2" edge="1" parent="lane_socio" source="act_solicitar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="obj_solicitud" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_solicitar" parent="lane_socio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Registrar Solicitud de Paquete Turístico&lt;br&gt;(destino, pax, fechas/horas partida-regreso)" vertex="1">
+          <mxGeometry height="60" width="180" x="80" y="110" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_solicitud" parent="lane_socio" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="s: SolicitudPaquete&lt;br&gt;&lt;b&gt;[Registrada]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="95" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-5" edge="1" parent="lane_socio" source="act_evaluar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="dec_conforme" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_evaluar" parent="lane_socio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Consultar y Evaluar Cotizaciones Recibidas" vertex="1">
+          <mxGeometry height="50" width="180" x="80" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-6" edge="1" parent="lane_socio" source="dec_conforme" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="act_observar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="145" y="540" />
+              <mxPoint x="85" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-7" edge="1" parent="lane_socio" source="dec_conforme" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="act_aprobar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="195" y="540" />
+              <mxPoint x="255" y="540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dec_conforme" parent="lane_socio" style="rhombus;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" value="¿Conforme?" vertex="1">
+          <mxGeometry height="70" width="100" x="120" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-8" edge="1" parent="lane_socio" source="act_observar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" target="obj_cot_obs" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_observar" parent="lane_socio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Registrar Observación a la Cotización" vertex="1">
+          <mxGeometry height="50" width="150" x="10" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_cot_obs" parent="lane_socio" style="html=1;whiteSpace=wrap;fillColor=#f8cecc;strokeColor=#b85450;" value="c: Cotización&lt;br&gt;&lt;b&gt;[Observada]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="15" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-10" edge="1" parent="lane_socio" source="act_aprobar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="obj_cot_apr">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_aprobar" parent="lane_socio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Registrar Aprobación de Cotización" vertex="1">
+          <mxGeometry height="50" width="150" x="180" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-11" edge="1" parent="lane_socio" source="obj_cot_apr" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="act_pago">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_cot_apr" parent="lane_socio" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" value="c: Cotización&lt;br&gt;&lt;b&gt;[Aprobada]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="140" x="185" y="640" as="geometry" />
+        </mxCell>
+        <mxCell id="act_pago" parent="lane_socio" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Registrar Pago de Cotización Aceptada" vertex="1">
+          <mxGeometry height="50" width="150" x="180" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_agente" parent="pool" style="swimlane;startSize=30;fillColor=#d5e8d4;strokeColor=#82b366;html=1;" value="&lt;b&gt;:Agente Receptivo&lt;/b&gt;" vertex="1">
+          <mxGeometry height="980" width="350" x="370" as="geometry" />
+        </mxCell>
+        <mxCell id="act_cotizar" parent="lane_agente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Elaborar y Presupuestar Cotización por Paquete" vertex="1">
+          <mxGeometry height="50" width="180" x="85" y="195" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_cot_emit" parent="lane_agente" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="c: Cotización&lt;br&gt;&lt;b&gt;[Emitida]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="100" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="act_subsanar" parent="lane_agente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Revisar y Subsanar Observaciones Técnicas/Costos" vertex="1">
+          <mxGeometry height="50" width="180" x="85" y="635" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_pasarela" parent="pool" style="swimlane;startSize=30;fillColor=#ffe6cc;strokeColor=#d79b00;html=1;" value="&lt;b&gt;:Pasarela Financiera / Banco&lt;/b&gt;" vertex="1">
+          <mxGeometry height="980" width="330" x="720" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-14" edge="1" parent="lane_pasarela" source="act_procesar_pago" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="obj_pago_val">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_procesar_pago" parent="lane_pasarela" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Procesar y Validar Transacción Electrónica" vertex="1">
+          <mxGeometry height="50" width="170" x="80" y="730" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-15" edge="1" parent="lane_pasarela" source="obj_pago_val" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="end_node">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_pago_val" parent="lane_pasarela" style="html=1;whiteSpace=wrap;fillColor=#d5e8d4;strokeColor=#82b366;" value="p: TransacciónPago&lt;br&gt;&lt;b&gt;[Validado]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="90" y="630" as="geometry" />
+        </mxCell>
+        <mxCell id="end_node" parent="lane_pasarela" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=#000000;" value="" vertex="1">
+          <mxGeometry height="30" width="30" x="150" y="550" as="geometry" />
+        </mxCell>
+        <mxCell id="lane_gerente" parent="pool" style="swimlane;startSize=30;fillColor=#f8cecc;strokeColor=#b85450;html=1;" value="&lt;b&gt;:Gerente de la Agencia&lt;/b&gt;" vertex="1">
+          <mxGeometry height="980" width="330" x="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-16" edge="1" parent="lane_gerente" source="act_auditar" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="obj_reporte">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="act_auditar" parent="lane_gerente" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#002D62;arcSize=20;" value="Consultar Cotizaciones Canceladas y Observadas por Rango de Fechas" vertex="1">
+          <mxGeometry height="60" width="190" x="70" y="460" as="geometry" />
+        </mxCell>
+        <mxCell id="obj_reporte" parent="lane_gerente" style="html=1;whiteSpace=wrap;fillColor=#fff2cc;strokeColor=#d6b656;" value="rep: ReporteAuditoría&lt;br&gt;&lt;b&gt;[Generado]&lt;/b&gt;" vertex="1">
+          <mxGeometry height="40" width="150" x="90" y="560" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-3" edge="1" parent="pool" source="obj_solicitud" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="act_cotizar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-4" edge="1" parent="pool" source="obj_cot_emit" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="act_evaluar">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-12" edge="1" parent="pool" source="obj_cot_obs" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="act_subsanar">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="115" y="800" />
+              <mxPoint x="545" y="800" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="7RPeTZScjbc7e9xd3iM4-13" edge="1" parent="pool" source="act_pago" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="act_procesar_pago">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
