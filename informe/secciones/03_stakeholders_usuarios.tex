@@ -1,0 +1,53 @@
+\section{Partes Interesadas y Usuarios}
+
+\subsection{Resumen de Partes Interesadas (No Usuarios Directos)}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{lLL}
+\toprule
+\textbf{Parte Interesada} & \textbf{Descripción} & \textbf{Responsabilidades Clave} \\
+\midrule
+\textbf{Gerente General} & Representante ejecutivo y comercial de PERÚ TOURS. & Asegurar viabilidad comercial, ROI y cumplimiento normativo MINCETUR. \\
+\textbf{Oficial Legal} & Asesor normativo institucional. & Garantizar el cumplimiento de la Ley N° 29733 de Protección de Datos Personales. \\
+\textbf{Admin Infraestructura} & Administrador de servidores y hosting cloud. & Garantizar disponibilidad $\ge 99.5\%$, respaldos automáticos y ciberseguridad. \\
+\bottomrule
+\end{tabularx}
+\caption{Resumen de partes interesadas no usuarias directas.}\label{tab:stakeholders}
+\end{table}
+
+\subsection{Resumen de Usuarios Directos del Sistema}
+\begin{table}[H]
+\centering
+\footnotesize
+\begin{tabularx}{\textwidth}{lLL}
+\toprule
+\textbf{Usuario / Rol} & \textbf{Responsabilidades en el Sistema} & \textbf{Interesado Vinculado} \\
+\midrule
+\textbf{Cliente No Socio} & Explorar oferta web y registrar solicitud de afiliación a socio. & Gerente General \\
+\textbf{Socio (Afiliado)} & Solicitar paquetes turísticos, evaluar cotizaciones, registrar observaciones, aprobar y pagar. & Gerente General \\
+\textbf{Agente Receptivo} & Recibir solicitudes, elaborar cotizaciones, responder observaciones y consultar históricos. & Gerente de Agencia \\
+\textbf{Gerente Agencia} & Supervisar operaciones y auditar cotizaciones canceladas u observadas por rango de fechas. & Gerente General \\
+\bottomrule
+\end{tabularx}
+\caption{Resumen de usuarios directos del sistema.}\label{tab:usuarios}
+\end{table}
+
+\subsection{Necesidades Clave y Competencia}
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{lcLL}
+\toprule
+\textbf{Necesidad} & \textbf{Prio.} & \textbf{Solución Actual (Problema)} & \textbf{Solución Propuesta en SIGETUR} \\
+\midrule
+Afiliación Digital & Alta & Trámites presenciales o correos no estandarizados. & Autoafiliación web instantánea con validación de datos. \\
+Solicitud Estructurada & Alta & Datos incompletos en mensajes informales de chat. & Formulario estructurado (destino, pasajeros, partida/regreso). \\
+Cotización Dinámica & Alta & Archivos Excel enviados por correo que demoran días. & Módulo interactivo con costeo rápido para el agente. \\
+Negociación de Observaciones & Alta & Observaciones perdidas en chats sin historial. & Hilos de observación asociados unívocamente a cada cotización. \\
+Pago Electrónico Seguro & Alta & Fotos de vouchers bancarios con validación manual. & Pasarela de pago integrada con confirmación inmediata. \\
+Auditoría por Fechas & Alta & Carencia de estadísticas de cotizaciones perdidas. & Filtro analítico de cotizaciones canceladas/observadas por fechas. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz de necesidades clave de los usuarios.}\label{tab:necesidades}
+\end{table}

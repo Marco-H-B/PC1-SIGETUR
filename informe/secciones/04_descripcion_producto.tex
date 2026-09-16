@@ -1,0 +1,14 @@
+\section{Descripción General del Producto}
+\textbf{SIGETUR} es un sistema web independiente y modular basado en una arquitectura cliente-servidor:
+\begin{itemize}
+    \item \textbf{Capa de Presentación:} Aplicación web responsive accesible en escritorio y móviles (Chrome, Firefox, Safari, Edge).
+    \item \textbf{Capa de Lógica y Persistencia:} Servicios RESTful con base de datos PostgreSQL en 3FN y transacciones ACID.
+    \item \textbf{Integraciones Externas:} Pasarela de pagos segura (Niubiz/Culqi/Stripe) y servicios de mensajería transaccional.
+\end{itemize}
+
+\subsection{Supuestos y Dependencias}
+\begin{enumerate}[noitemsep]
+    \item Disponibilidad de conexión a internet para turistas y personal de la agencia.
+    \item Uptime del proveedor de pasarela de pagos $\ge 99.9\%$.
+    \item Disponibilidad de tarifarios vigentes con aerolíneas, hoteles y operadores turísticos locales.
+\end{enumerate}

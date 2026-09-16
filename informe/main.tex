@@ -1,0 +1,70 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[top=2cm,bottom=2cm,left=2.2cm,right=2.2cm]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs,tabularx,array}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{float}
+\usepackage{hyperref}
+
+\definecolor{UniBlue}{RGB}{0, 45, 98}
+\definecolor{UniRed}{RGB}{140, 29, 34}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=UniBlue,
+    citecolor=UniRed,
+    urlcolor=UniBlue
+}
+
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength{\headheight}{14pt}
+\fancyhead[L]{\small \textit{CC341: Ingeniería de Software (2026--2)}}
+\fancyhead[R]{\small \textit{SIGETUR / PERÚ TOURS}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\titleformat{\section}{\normalfont\large\bfseries\color{UniBlue}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\normalfont\normalsize\bfseries\color{UniBlue}}{\thesubsection}{0.8em}{}
+\titleformat{\subsubsection}{\normalfont\small\bfseries\color{black}}{\thesubsubsection}{0.8em}{}
+\titlespacing*{\section}{0pt}{1.2ex plus 0.5ex minus .2ex}{0.6ex plus .2ex}
+\titlespacing*{\subsection}{0pt}{1.0ex plus 0.4ex minus .2ex}{0.4ex plus .2ex}
+
+\setlist{itemsep=0.15em, topsep=0.2em, parsep=0.1em}
+
+\begin{document}
+\pagenumbering{alph}
+\input{caratula.tex}
+
+\newpage
+\pagenumbering{roman}
+\tableofcontents
+\newpage
+\pagenumbering{arabic}
+
+\input{secciones/01_introduccion.tex}
+\input{secciones/02_posicionamiento.tex}
+\input{secciones/03_stakeholders_usuarios.tex}
+\input{secciones/04_descripcion_producto.tex}
+\input{secciones/05_caracteristicas.tex}
+\input{secciones/06_otros_requisitos.tex}
+\input{secciones/07_modelo_negocio.tex}
+\input{secciones/08_especificacion_requisitos.tex}
+
+\newpage
+\nocite{*}
+\bibliographystyle{plain}
+\bibliography{referencias}
+
+\end{document}

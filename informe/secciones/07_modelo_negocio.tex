@@ -1,0 +1,41 @@
+\section{Modelo del Negocio}
+Siguiendo la metodología de Jesús García Molina et al. (\textit{De los Procesos del Negocio a los Casos de Uso}), se formalizan los procesos organizacionales de PERÚ TOURS.
+
+\subsection{Objetivos del Negocio (ON)}
+\begin{itemize}[noitemsep]
+    \item \textbf{ON-01: Rapidez:} Reducir el tiempo promedio de cotización a menos de 4 horas hábiles.
+    \item \textbf{ON-02: Fidelización:} Incrementar la afiliación de nuevos socios en un 40\% en el primer año.
+    \item \textbf{ON-03: Conversión:} Recuperar 25\% de cotizaciones observadas mediante renegociación ágil.
+    \item \textbf{ON-04: Control:} Disponer del 100\% de trazabilidad sobre cotizaciones canceladas u observadas.
+\end{itemize}
+
+\subsection{Actores y Trabajadores del Negocio}
+\begin{itemize}[noitemsep]
+    \item \textbf{Actores de Negocio (\texttt{<<Business Actor>>}):} \textbf{AN-01 Cliente Turista} (externo, solicita y contrata) y \textbf{AN-02 Pasarela Bancaria} (entidad financiera externa).
+    \item \textbf{Trabajadores de Negocio (\texttt{<<Business Worker>>}):} \textbf{TN-01 Agente Receptivo} (interno operativo) y \textbf{TN-02 Gerente de Agencia} (interno directivo/auditor).
+\end{itemize}
+
+\subsection{Casos de Uso del Negocio (CUN) y Diagrama}
+\begin{itemize}[noitemsep]
+    \item \textbf{CUN-01: Afiliar Cliente a Socio} | \textbf{CUN-02: Cotizar Paquete Turístico}
+    \item \textbf{CUN-03: Gestionar Venta y Pago de Paquete} | \textbf{CUN-04: Auditar y Controlar Cotizaciones}
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.85\textwidth]{../diagramas/diagram_cun.png}
+    \caption{Diagrama de Casos de Uso del Negocio (CUN) para PERÚ TOURS.}\label{fig:cun}
+\end{figure}
+
+\subsection{Diagrama de Actividades con Carriles (Swimlanes)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.88\textwidth]{../diagramas/diagram_actividades.png}
+    \caption{Diagrama de Actividades con Carriles y Estados de Objetos del Negocio.}\label{fig:swimlanes}
+\end{figure}
+
+\subsubsection{Flujo y Máquina de Estados del Objeto Cotización}
+El objeto de negocio \texttt{c: Cotización} transita por los siguientes estados controlados:
+\begin{center}
+\texttt{[Emitida]} $\longrightarrow$ \texttt{[Observada]} $\rightleftharpoons$ \texttt{[Reajustada]} $\longrightarrow$ \texttt{[Aprobada]} $\longrightarrow$ \texttt{[Pagada]} o bien $\longrightarrow$ \texttt{[Cancelada]}
+\end{center}
