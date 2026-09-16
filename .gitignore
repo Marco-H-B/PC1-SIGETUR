@@ -1,0 +1,32 @@
+# ======================================
+# LaTeX Archivos Temporales y Auxiliares
+# ======================================
+*.aux
+*.log
+*.out
+*.toc
+*.nav
+*.snm
+*.synctex.gz
+*.fls
+*.fdb_latexmk
+*.bbl
+*.blg
+*.vrb
+*.lot
+*.lof
+
+# ============================
+# Sistema Operativo y Editores
+# ============================
+Thumbs.db
+.DS_Store
+desktop.ini
+.vscode/
+.idea/
+
+# =================================
+# Preservar PDFs finales compilados
+# =================================
+!informe/main.pdf
+!dispositivas/presentacion.pdf
