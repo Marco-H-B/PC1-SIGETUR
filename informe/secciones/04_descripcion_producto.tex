@@ -1,14 +1,14 @@
 \section{Descripción General del Producto}
-SIGETUR es un sistema web modular basado en una arquitectura cliente-servidor:
+SIGETUR se estructura como una plataforma web organizada en tres capas principales:
 \begin{itemize}
-    \item \textbf{Capa de Presentación:} Aplicación web responsive accesible en escritorio y móviles (Chrome, Firefox, Safari, Edge).
-    \item \textbf{Capa de Lógica y Persistencia:} Servicios RESTful con base de datos PostgreSQL en 3FN y transacciones ACID.
-    \item \textbf{Integraciones Externas:} Pasarela de pagos segura (Niubiz/Culqi/Stripe) y servicios de mensajería transaccional.
+    \item \textbf{Capa de Presentación (Frontend):} Aplicación web adaptable (\textit{responsive}) accesible desde computadoras de escritorio y dispositivos móviles mediante navegadores modernos.
+    \item \textbf{Capa de Negocio y Datos (Backend):} Servicios web RESTful respaldados por una base de datos relacional (PostgreSQL), garantizando la consistencia y seguridad transaccional en cada cotización y pago.
+    \item \textbf{Servicios Externos:} Integración con una pasarela de pago bancaria (como Niubiz, Culqi o Stripe) para transacciones en línea y servicios de correo electrónico para el envío automático de cotizaciones y confirmaciones.
 \end{itemize}
 
 \subsection{Supuestos y Dependencias}
 \begin{enumerate}[noitemsep]
-    \item Disponibilidad de conexión a internet para turistas y personal de la agencia.
-    \item Uptime del proveedor de pasarela de pagos $\ge 99.9\%$.
-    \item Disponibilidad de tarifarios vigentes con aerolíneas, hoteles y operadores turísticos locales.
+    \item Acceso a conexión a internet estable tanto por parte de los turistas como del personal de la agencia.
+    \item Alta disponibilidad ($\ge 99.9\%$) y estabilidad en las APIs de la pasarela de pagos bancaria para procesar los cobros sin interrupciones.
+    \item Mantenimiento al día de las tarifas y convenios de PERÚ TOURS con sus proveedores locales (hoteles, transporte y guías turísticos).
 \end{enumerate}
