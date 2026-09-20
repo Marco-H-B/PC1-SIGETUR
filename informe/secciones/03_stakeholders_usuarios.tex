@@ -8,9 +8,9 @@
 \toprule
 \textbf{Parte Interesada} & \textbf{Descripción} & \textbf{Responsabilidades Clave} \\
 \midrule
-\textbf{Gerente General} & Representante ejecutivo y comercial de PERÚ TOURS. & Asegurar viabilidad comercial, ROI y cumplimiento normativo MINCETUR~\cite{mincetur2020}. \\ % Cita: Reglamento de Agencias de Viajes (D.S. N° 005-2020-MINCETUR)
-\textbf{Oficial Legal} & Asesor normativo institucional. & Garantizar el cumplimiento de la Ley N° 29733 de Protección de Datos Personales. \\
-\textbf{Admin Infraestructura} & Administrador de servidores y hosting cloud. & Garantizar disponibilidad $\ge 99.5\%$, respaldos automáticos y ciberseguridad. \\
+\textbf{Gerente General} & Máxima autoridad ejecutiva y comercial de la agencia. & Validar que el sistema aumente las ventas, reduzca cotizaciones perdidas y cumpla las normas de MINCETUR~\cite{mincetur2020}. \\ % Cita: Reglamento de Agencias de Viajes (D.S. N° 005-2020-MINCETUR)
+\textbf{Asesor Legal} & Encargado del cumplimiento normativo de la agencia. & Garantizar que el tratamiento de datos personales y pasaportes cumpla con la Ley N° 29733. \\
+\textbf{Administrador TI} & Responsable de servidores, despliegue y soporte técnico. & Mantener el sistema en línea $\ge 99.5\%$, gestionar copias de respaldo y proteger la seguridad de la plataforma. \\
 \bottomrule
 \end{tabularx}
 \caption{Resumen de partes interesadas no usuarias directas.}\label{tab:stakeholders}
@@ -22,12 +22,12 @@
 \footnotesize
 \begin{tabularx}{\textwidth}{lLL}
 \toprule
-\textbf{Usuario / Rol} & \textbf{Responsabilidades en el Sistema} & \textbf{Interesado Vinculado} \\
+\textbf{Usuario / Rol} & \textbf{Acciones Principales en SIGETUR} & \textbf{Interesado Vinculado} \\
 \midrule
-\textbf{Cliente No Socio} & Explorar oferta web y registrar solicitud de afiliación a socio. & Gerente General \\
-\textbf{Socio (Afiliado)} & Solicitar paquetes turísticos, evaluar cotizaciones, registrar observaciones, aprobar y pagar. & Gerente General \\
-\textbf{Agente Receptivo} & Recibir solicitudes, elaborar cotizaciones, responder observaciones y consultar históricos. & Gerente de Agencia \\
-\textbf{Gerente Agencia} & Supervisar operaciones y auditar cotizaciones canceladas o aceptadas con observaciones por rango de fechas. & Gerente General \\
+\textbf{Cliente No Socio} & Consultar la oferta de viajes y registrarse en la plataforma para convertirse en socio. & Gerente General (captación de nuevos clientes) \\
+\textbf{Socio (Turista)} & Solicitar viajes a medida, revisar cotizaciones, enviar observaciones, aprobar presupuestos y pagar en línea. & Gerente General (fidelización y cierre de ventas) \\
+\textbf{Agente Receptivo} & Recibir solicitudes de viaje, costear y emitir cotizaciones, aplicar reajustes por observaciones y revisar su historial. & Gerente General (eficiencia y rapidez en la atención) \\
+\textbf{Gerente Agencia} & Consultar reportes y métricas de cotizaciones canceladas o aprobadas con cambios en rangos de fechas específicos. & Gerente General (control y toma de decisiones comerciales) \\
 \bottomrule
 \end{tabularx}
 \caption{Resumen de usuarios directos del sistema.}\label{tab:usuarios}
@@ -39,14 +39,14 @@
 \scriptsize
 \begin{tabularx}{\textwidth}{lcLL}
 \toprule
-\textbf{Necesidad} & \textbf{Prio.} & \textbf{Solución Actual (Problema)} & \textbf{Solución Propuesta en SIGETUR} \\
+\textbf{Necesidad} & \textbf{Prio.} & \textbf{Situación Actual (Problema)} & \textbf{Solución en SIGETUR} \\
 \midrule
-Afiliación Digital & Alta & Trámites presenciales o correos no estandarizados. & Autoafiliación web instantánea con validación de datos. \\
-Solicitud Estructurada & Alta & Datos incompletos en mensajes informales de chat. & Formulario estructurado (destino, pasajeros, partida/regreso). \\
-Cotización Dinámica & Alta & Archivos Excel enviados por correo que demoran días. & Módulo interactivo con costeo rápido para el agente. \\
-Negociación de Observaciones & Alta & Observaciones perdidas en chats sin historial. & Hilos de observación asociados unívocamente a cada cotización. \\
-Pago Electrónico Seguro & Alta & Fotos de vouchers bancarios con validación manual. & Pasarela de pago integrada con confirmación inmediata. \\
-Auditoría por Fechas & Alta & Carencia de estadísticas de cotizaciones perdidas. & Filtro analítico de cotizaciones canceladas/observadas por fechas. \\
+Afiliación de Socios & Alta & Registro presencial o correos sin formato que demoran en procesarse. & Registro web con validación automática de datos y cuenta activa al instante. \\
+Solicitud de Paquetes & Alta & Mensajes informales por WhatsApp con datos incompletos del viaje. & Formulario estructurado con destino, número de pasajeros y fechas de viaje. \\
+Armado de Cotizaciones & Alta & Cálculos manuales en Excel enviados por correo tras días de espera. & Módulo de cotización con cálculo automático de tarifas y márgenes para el agente. \\
+Control de Observaciones & Alta & Solicitudes de cambio perdidas o traspapeladas en chats sueltos. & Historial de cambios enlazado a cada cotización para reajustar precios con orden. \\
+Cobro en Línea & Alta & Envío de fotos de vouchers bancarios con verificación manual lenta. & Pasarela bancaria integrada con confirmación y liquidación en tiempo real. \\
+Auditoría General & Alta & La gerencia no tiene registros de cotizaciones canceladas ni de sus causas. & Reportes filtrados por rango de fechas para auditar cotizaciones canceladas o modificadas. \\
 \bottomrule
 \end{tabularx}
 \caption{Matriz de necesidades clave de los usuarios.}\label{tab:necesidades}
