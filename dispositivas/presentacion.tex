@@ -196,27 +196,30 @@
 \end{frame}
 
 % ----------------- SLIDE 8: CARACTERÍSTICAS DEL PRODUCTO (C01 - C07) -----------------
-\begin{frame}{Características de Alto Nivel del Sistema (Features)}
-    \scriptsize
+\begin{frame}{Características Principales de SIGETUR (C01 -- C07)}
+    \footnotesize
     \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|l|X|c|c|}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{clXc}
     \hline
-    \textbf{ID} & \textbf{Característica} & \textbf{Descripción Funcional} & \textbf{Usuario} & \textbf{Prioridad} \\ \hline
-    \textbf{C01} & Afiliación de Clientes & Registro de clientes no socios al programa de socios de la agencia. & No Socio & Alta \\ \hline
-    \textbf{C02} & Registro de Solicitudes & Captura de destino, n° personas, ciudad/fecha/hora partida y regreso. & Socio & Alta \\ \hline
-    \textbf{C03} & Emisión de Cotizaciones & Presupuestación de itinerarios y servicios por paquete turístico. & Agente Receptivo & Alta \\ \hline
-    \textbf{C04} & Aprobación de Cotización & Consulta, selección y conformidad formal de cotizaciones recibidas. & Socio & Alta \\ \hline
-    \textbf{C05} & Gestión de Observaciones & Registro de comentarios para reajuste técnico o presupuestario. & Socio & Alta \\ \hline
-    \textbf{C06} & Procesamiento de Pagos & Cobro digital con tarjeta/billetera de cotizaciones aprobadas. & Socio & Alta \\ \hline
-    \textbf{C07} & Auditoría por Fechas & Consulta de cotizaciones canceladas u observadas por rango cronológico. & Gerente / Agente & Alta \\ \hline
+    \textbf{ID} & \textbf{Característica} & \textbf{Descripción Funcional} & \textbf{Usuario Principal} \\ \hline
+    \textbf{C01} & Afiliación de Socios & Registro y activación de nuevos clientes al programa de socios. & No Socio \\ \hline
+    \textbf{C02} & Solicitud de Paquetes & Registro de viaje: destino, número de personas y fechas de ida/vuelta. & Socio (Turista) \\ \hline
+    \textbf{C03} & Emisión de Cotizaciones & Cálculo y desglose de tarifas (tours, hospedaje, transporte). & Agente Receptivo \\ \hline
+    \textbf{C04} & Aprobación de Cotización & Revisión detallada y confirmación del presupuesto por el cliente. & Socio (Turista) \\ \hline
+    \textbf{C05} & Gestión de Observaciones & Envío de ajustes al itinerario o precio para que el agente reajuste. & Socio (Turista) \\ \hline
+    \textbf{C06} & Procesamiento de Pagos & Cobro en línea con tarjeta o billetera digital de cotizaciones aprobadas. & Socio (Turista) \\ \hline
+    \textbf{C07} & Auditoría por Fechas & Reportes de cotizaciones canceladas o modificadas por rango de fechas. & Gerente / Agente \\ \hline
     \end{tabularx}
     \end{table}
+    \vspace{0.1cm}
+    \centering \scriptsize \textit{Todas las características son de prioridad Alta para la versión inicial del sistema.}
 \end{frame}
 
-% =========================================================================
-% BLOQUE 2: SEBASTIÁN ÁNGEL BERRÚ NINAHUANCA (11 MINUTOS)
-% =========================================================================
+% ==========
+% BLOQUE 2: 
+% ==========
 
 % ----------------- SLIDE 9: MODELADO DEL NEGOCIO (FUNDAMENTOS) -----------------
 \begin{frame}{Modelo del Negocio: De los Procesos a los Casos de Uso}
