@@ -23,17 +23,32 @@
 \setbeamercolor{block title}{bg=UniBlue,fg=white}
 \setbeamercolor{block body}{bg=gray!10,fg=black}
 
-\title[SIGETUR - PERÚ TOURS]{\textbf{PROYECTO SIGETUR}}
-\subtitle{\textbf{Sistema Integrado de Gestión Turística para PERÚ TOURS}\\\small Primera Práctica Calificada (PC1) - CC341 Ingeniería de Software 2026-2}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
 
-\author[Berrú \& Huamani]{
-    \textbf{Expositores:}\\[0.2cm]
-    Marco Antonio Huamani Bonifacio (\texttt{marco.huamani.b@uni.pe})\\
-    Sebastián Ángel Berrú Ninahuanca (\texttt{sebastian.berru.n@uni.pe})
+% Enlace a referencias para validación de BibTeX en herramientas de IDE
+\makeatletter
+\AtBeginDocument{
+    \immediate\write\@auxout{\string\bibdata{../informe/referencias}}
+    \immediate\write\@auxout{\string\bibstyle{plain}}
+    \immediate\write\@auxout{\string\citation{*}}
+}
+\makeatother
+
+\title[SIGETUR - PERÚ TOURS]{\textbf{PROYECTO SIGETUR}}
+\subtitle[Sistema Integrado de Gestión Turística para PERÚ TOURS]{%
+    \texorpdfstring{\textbf{Sistema Integrado de Gestión Turística para PERÚ TOURS}\\\small Primera Práctica Calificada (PC1) - CC341 Ingeniería de Software 2026-2}{Sistema Integrado de Gestión Turística para PERÚ TOURS}%
+}
+
+\author[Berrú \& Huamani]{%
+    \texorpdfstring{%
+        \textbf{Expositores:}\\[0.2cm]
+        Marco Antonio Huamani Bonifacio (\texttt{marco.huamani.b@uni.pe})\\
+        Sebastián Ángel Berrú Ninahuanca (\texttt{sebastian.berru.n@uni.pe})%
+    }{Marco Antonio Huamani Bonifacio y Sebastián Ángel Berrú Ninahuanca}%
 }
 
 \institute[UNI - FC]{
-    \includegraphics[height=1.1cm]{../informe/logo_uni.png}\\[0.15cm]
+    \includegraphics[height=1.0cm]{../informe/logo_uni.png}\\[0.1cm]
     \textbf{Universidad Nacional de Ingeniería}\\
     Facultad de Ciencias -- Escuela Profesional de Ciencia de la Computación\\[0.1cm]
     \small Docente: Mg. Zoraida Mamani Rodríguez
@@ -44,7 +59,7 @@
 \begin{document}
 
 % ----------------- SLIDE 1: PORTADA -----------------
-\begin{frame}
+\begin{frame}[plain]
     \titlepage
 \end{frame}
 
@@ -182,7 +197,7 @@
     \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.2}
-    \begin{tabularx}{\textwidth}{lXX}
+    \begin{tabularx}{\textwidth}{lLL}
     \hline
     \textbf{Necesidad} & \textbf{Situación Actual (Problema)} & \textbf{Solución en SIGETUR} \\ \hline
     \textbf{Afiliación de Socios} & Registro manual o por correo que demora en procesarse. & Registro web con activación de cuenta inmediata. \\ \hline
@@ -201,7 +216,7 @@
     \begin{table}[H]
     \centering
     \renewcommand{\arraystretch}{1.15}
-    \begin{tabularx}{\textwidth}{clXc}
+    \begin{tabularx}{\textwidth}{clLc}
     \hline
     \textbf{ID} & \textbf{Característica} & \textbf{Descripción Funcional} & \textbf{Usuario Principal} \\ \hline
     \textbf{C01} & Afiliación de Socios & Registro y activación de nuevos clientes al programa de socios. & No Socio \\ \hline
@@ -214,7 +229,7 @@
     \end{tabularx}
     \end{table}
     \vspace{0.1cm}
-    \centering \scriptsize \textit{Todas las características son de prioridad Alta para la versión inicial del sistema.}
+    \centering \scriptsize Todas las características son de prioridad Alta para la versión inicial del sistema.
 \end{frame}
 
 % ==========
@@ -222,31 +237,32 @@
 % ==========
 
 % ----------------- SLIDE 9: MODELADO DEL NEGOCIO (FUNDAMENTOS) -----------------
-\begin{frame}{Modelo del Negocio: De los Procesos a los Casos de Uso}
-    \begin{block}{\textbf{Fundamento Metodológico (García Molina et al.~\cite{garciamolina})}} % Cita: Metodología Procesos a Casos de Uso (Univ. de Murcia)
+\begin{frame}{Modelo del Negocio: De los Procesos al Software}
+    \begin{block}{\textbf{Transición Metodológica (García Molina et al.)}}
         \small
-        \textit{"No es posible modelar casos de uso de software adecuados sin antes comprender y formalizar los procesos del negocio y los datos que fluyen entre sus actividades."}
+        Para definir los requisitos del sistema, primero debemos entender y ordenar los procesos de PERÚ TOURS, identificando cuellos de botella y metas cuantificables.
     \end{block}
     \vspace{0.2cm}
     \begin{columns}[t]
-        \begin{column}{0.48\textwidth}
+        \begin{column}{0.50\textwidth}
             \begin{exampleblock}{\textbf{Objetivos del Negocio (ON)}}
                 \small
                 \begin{itemize}
-                    \item \textbf{ON-01:} Emitir cotizaciones en $< 4$ horas.
-                    \item \textbf{ON-02:} Incrementar socios en un $40\%$.
-                    \item \textbf{ON-03:} Recuperar $25\%$ de cotizaciones observadas.
-                    \item \textbf{ON-04:} Visibilidad del $100\%$ en cotizaciones canceladas.
+                    \item \textbf{ON-01 (Rapidez):} Reducir tiempo de cotización a menos de 4 horas (actualmente $> 48$h).
+                    \item \textbf{ON-02 (Crecimiento):} Incrementar afiliación de socios en un 40\%.
+                    \item \textbf{ON-03 (Ventas):} Recuperar el 25\% de cotizaciones observadas.
+                    \item \textbf{ON-04 (Control):} Monitorear el 100\% de cotizaciones canceladas y sus causas.
                 \end{itemize}
             \end{exampleblock}
         \end{column}
-        \begin{column}{0.48\textwidth}
-            \begin{exampleblock}{\textbf{Taxonomía RUP del Negocio}}
+        
+        \begin{column}{0.46\textwidth}
+            \begin{exampleblock}{\textbf{Elementos del Modelo (RUP)}}
                 \small
                 \begin{itemize}
-                    \item \textbf{Actores de Negocio:} Externos a la empresa que reciben valor (\textit{Cliente}, \textit{Banco}).
-                    \item \textbf{Trabajadores de Negocio:} Personal interno que opera tareas (\textit{Agente}, \textit{Gerente}).
-                    \item \textbf{CUN:} Procesos integrales que cumplen un objetivo.
+                    \item \textbf{Actores del Negocio:} Entidades externas que reciben valor de la agencia (Cliente Turista, Pasarela Bancaria).
+                    \item \textbf{Trabajadores del Negocio:} Personal interno que ejecuta los procesos (Agente Receptivo, Gerente).
+                    \item \textbf{Casos de Uso del Negocio (CUN):} Procesos clave que satisfacen los objetivos de la empresa.
                 \end{itemize}
             \end{exampleblock}
         \end{column}
@@ -256,60 +272,81 @@
 % ----------------- SLIDE 10: DIAGRAMA DE CASOS DE USO DEL NEGOCIO -----------------
 \begin{frame}{Diagrama de Casos de Uso del Negocio (CUN)}
     \centering
-    \includegraphics[width=0.80\textwidth]{../diagramas/diagram_cun.png}
+    \includegraphics[width=0.85\textwidth,height=0.68\textheight,keepaspectratio]{../diagramas/diagram_cun.png}
+    
+    \vspace{0.15cm}
+    \begin{block}{}
+        \scriptsize \centering
+        \textbf{CUN-01:} Afiliación de Socios \quad$\vert$\quad
+        \textbf{CUN-02:} Cotización a Medida \quad$\vert$\quad
+        \textbf{CUN-03:} Venta y Pago \quad$\vert$\quad
+        \textbf{CUN-04:} Auditoría Gerencial
+    \end{block}
 \end{frame}
 
 % ----------------- SLIDE 11: DIAGRAMA DE ACTIVIDADES (SWIMLANES) -----------------
-\begin{frame}{Diagrama de Actividades con Carriles (Swimlanes)}
+\begin{frame}{Diagrama de Actividades: Flujo del Negocio con Carriles}
     \centering
-    \includegraphics[width=0.78\textwidth]{../diagramas/diagram_actividades.png}
+    \includegraphics[width=0.88\textwidth,height=0.68\textheight,keepaspectratio]{../diagramas/diagram_actividades.png}
+    
+    \vspace{0.15cm}
+    \begin{alertblock}{}
+        \scriptsize \centering
+        \textbf{3 Carriles:} Cliente $\rightarrow$ Agente Receptivo $\rightarrow$ Pasarela Bancaria \quad$\vert$\quad
+        \textbf{Punto Crítico:} Negociación (Observaciones $\rightleftharpoons$ Reajuste) previa al cobro.
+    \end{alertblock}
 \end{frame}
 
 % ----------------- SLIDE 12: OBJETOS DEL NEGOCIO Y CICLO DE ESTADOS -----------------
-\begin{frame}{Ciclo de Vida y Estados de los Objetos del Negocio}
-    \small
-    El flujo de datos entre actividades produce y transforma entidades clave del negocio:
-    \vspace{0.2cm}
-    \begin{block}{\textbf{Máquina de Estados de la Cotización (\texttt{c: Cotización})}}
-        \centering
-        \texttt{[Emitida]} $\longrightarrow$ \texttt{[Observada]} $\rightleftharpoons$ \texttt{[Reajustada]}\\[0.15cm]
-        $\downarrow$\\[0.15cm]
-        \texttt{[Aprobada]} $\longrightarrow$ \texttt{[Pagada / Formalizada]}\\[0.15cm]
-        \textit{(o bien)} $\longrightarrow$ \texttt{[Cancelada / Expirada]}
+\begin{frame}{Ciclo de Vida del Objeto Central: Cotización}
+    \begin{block}{\textbf{Máquina de Estados (\texttt{c: Cotización})}}
+        \small \centering
+        \textbf{Camino Principal:} \texttt{[Emitida]} $\longrightarrow$ \texttt{[Aprobada]} $\longrightarrow$ \texttt{[Pagada]}\\[0.2cm]
+        \textbf{Negociación:} \texttt{[Emitida]} $\longrightarrow$ \texttt{[Observada]} $\rightleftharpoons$ \texttt{[Reajustada]} $\longrightarrow$ \texttt{[Aprobada]}\\[0.2cm]
+        \textbf{Cierre / Desistimiento:} \texttt{[Emitida / Observada]} $\longrightarrow$ \texttt{[Cancelada]}
     \end{block}
+    
     \vspace{0.2cm}
     \begin{columns}[t]
         \begin{column}{0.48\textwidth}
-            \begin{exampleblock}{\textbf{Objeto SolicitudPaquete}}
-                \footnotesize
-                $\bullet$ \texttt{[Registrada]} $\rightarrow$ \texttt{[Asignada]} $\rightarrow$ \texttt{[Atendida]}.
+            \begin{exampleblock}{\textbf{Lógica de Negociación}}
+                \small
+                \begin{itemize}
+                    \item Si el cliente tiene discrepancias de precio o ruta, pasa a \textbf{[Observada]}.
+                    \item El agente emite una versión \textbf{[Reajustada]} hasta su conformidad.
+                \end{itemize}
             \end{exampleblock}
         \end{column}
+        
         \begin{column}{0.48\textwidth}
-            \begin{exampleblock}{\textbf{Objeto TransacciónPago}}
-                \footnotesize
-                $\bullet$ \texttt{[Pendiente]} $\rightarrow$ \texttt{[Procesado]} $\rightarrow$ \texttt{[Validado]}.
-            \end{exampleblock}
+            \begin{alertblock}{\textbf{Reglas Críticas del Negocio}}
+                \small
+                \begin{itemize}
+                    \item \textbf{Control de Pago (RN03):} Solo se permite cobrar a cotizaciones en estado \textbf{[Aprobada]}.
+                    \item \textbf{Auditoría (RN05):} Todo paso a \textbf{[Cancelada]} registra motivo para el reporte gerencial.
+                \end{itemize}
+            \end{alertblock}
         \end{column}
     \end{columns}
 \end{frame}
 
 % ----------------- SLIDE 13: REQUISITOS FUNCIONALES (RF01 - RF08) -----------------
-\begin{frame}{Especificación de Requisitos Funcionales (RF)}
+\begin{frame}{Requisitos Funcionales del Sistema (RF01 -- RF08)}
     \scriptsize
     \begin{table}[H]
     \centering
-    \begin{tabularx}{\textwidth}{|c|l|X|c|}
+    \renewcommand{\arraystretch}{1.15}
+    \begin{tabularx}{\textwidth}{clLc}
     \hline
-    \textbf{Código} & \textbf{Requisito Funcional} & \textbf{Descripción Técnica} & \textbf{Rol} \\ \hline
-    \textbf{RF01} & Afiliación de Clientes & Registro de clientes no socios mediante formulario web validado. & No Socio \\ \hline
-    \textbf{RF02} & Registro de Solicitudes & Captura de destino, n° personas, fechas y horas de partida y regreso. & Socio \\ \hline
-    \textbf{RF03} & Emisión de Cotizaciones & Presupuestación de servicios y fijación de costos por el agente receptivo. & Agente \\ \hline
-    \textbf{RF04} & Consulta de Cotizaciones & Listado interactivo y comparativa de cotizaciones recibidas. & Socio \\ \hline
-    \textbf{RF05} & Aprobación de Cotización & Registro de aceptación formal de una cotización y habilitación de pago. & Socio \\ \hline
-    \textbf{RF06} & Registro de Observaciones & Ingreso de observaciones técnicas o económicas a cotizaciones de interés. & Socio \\ \hline
-    \textbf{RF07} & Registro de Pago & Abono mediante pasarela segura y emisión de constancia digital. & Socio \\ \hline
-    \textbf{RF08} & Consulta de Auditoría & Filtrado de cotizaciones canceladas u observadas por rango de fechas. & Gerente / Agente \\ \hline
+    \textbf{ID} & \textbf{Requisito Funcional} & \textbf{Descripción de la Capacidad} & \textbf{Rol Principal} \\ \hline
+    \textbf{RF01} & Afiliación de Clientes & Formulario web con validación de datos para el alta inmediata de socios. & No Socio \\ \hline
+    \textbf{RF02} & Solicitud de Paquetes & Captura de itinerario: destino, número de personas y fechas de ida/vuelta. & Socio (Turista) \\ \hline
+    \textbf{RF03} & Emisión de Cotización & Cálculo de tarifas y desglose de servicios (hotel, transporte, tours). & Agente Receptivo \\ \hline
+    \textbf{RF04} & Consulta de Cotizaciones & Bandeja del cliente para revisar itinerarios y comparar presupuestos. & Socio (Turista) \\ \hline
+    \textbf{RF05} & Aprobación de Cotización & Confirmación formal de la propuesta elegida, pasando a estado Aprobada. & Socio (Turista) \\ \hline
+    \textbf{RF06} & Registro de Observaciones & Envío de comentarios para ajustar fechas, precio o servicios del viaje. & Socio (Turista) \\ \hline
+    \textbf{RF07} & Procesamiento de Pago & Cobro seguro mediante pasarela bancaria y emisión de constancia de viaje. & Socio (Turista) \\ \hline
+    \textbf{RF08} & Reporte de Auditoría & Módulo para filtrar cotizaciones canceladas y observadas por fechas. & Gerente / Agente \\ \hline
     \end{tabularx}
     \end{table}
 \end{frame}
@@ -318,25 +355,26 @@
 \begin{frame}{Requisitos No Funcionales (FURPS+) y Reglas de Negocio}
     \begin{columns}[t]
         \begin{column}{0.48\textwidth}
-            \begin{block}{\textbf{Requisitos No Funcionales (FURPS+)~\cite{pressman2015}}} % Cita: Modelo FURPS+ (Pressman & Maxim)
+            \begin{block}{\textbf{Calidad del Sistema (Modelo FURPS+)}}
                 \scriptsize
                 \begin{itemize}
-                    \item \textbf{Usabilidad:} 100\% responsive en web y móvil; flujo en $< 4$ clics.
-                    \item \textbf{Rendimiento:} Consultas y reportes con latencia $< 1.8$ segundos.
-                    \item \textbf{Seguridad:} Autenticación RBAC, cifrado HTTPS TLS 1.3 y hash Argon2id.
-                    \item \textbf{Disponibilidad:} Uptime de servidores $\ge 99.5\%$.
+                    \item \textbf{Usabilidad:} Interfaz web responsive (móvil y PC) y navegación ágil en un máximo de 4 pasos.
+                    \item \textbf{Rendimiento:} Consultas y generación de reportes con respuesta menor a 1.8 segundos.
+                    \item \textbf{Seguridad:} Control de acceso por roles (RBAC), tráfico cifrado en HTTPS y claves con Argon2id.
+                    \item \textbf{Confiabilidad:} Disponibilidad del servicio $\ge 99.5\%$ y copias de seguridad automáticas diarias.
                 \end{itemize}
             \end{block}
         \end{column}
+        
         \begin{column}{0.48\textwidth}
             \begin{alertblock}{\textbf{Reglas del Negocio (RN)}}
                 \scriptsize
                 \begin{itemize}
-                    \item \textbf{RN01:} Solo socios activos pueden solicitar y consultar cotizaciones.
-                    \item \textbf{RN02:} Fecha/hora de regreso estrictamente posterior a la de partida.
-                    \item \textbf{RN03:} Solo cotizaciones \textbf{[Aprobadas]} pueden recibir pago.
-                    \item \textbf{RN04:} Cotizaciones observadas requieren reajuste antes de aprobarse.
-                    \item \textbf{RN05:} Auditoría reservada a Agente y Gerente.
+                    \item \textbf{RN01 (Condición de Socio):} Solo usuarios con cuenta de socio activa pueden solicitar cotizaciones.
+                    \item \textbf{RN02 (Cronología):} La fecha de regreso debe ser posterior a la partida, con anticipación mínima de 48h.
+                    \item \textbf{RN03 (Regla de Cobro):} Ningún pago se procesa si la cotización no tiene el estado \textbf{[Aprobada]}.
+                    \item \textbf{RN04 (Negociación):} Toda cotización observada debe ser reajustada por el agente antes de aceptarse.
+                    \item \textbf{RN05 (Auditoría):} El reporte de cancelaciones es exclusivo para el Agente Receptivo y Gerente.
                 \end{itemize}
             \end{alertblock}
         \end{column}
@@ -344,30 +382,32 @@
 \end{frame}
 
 % ----------------- SLIDE 15: TRAZABILIDAD Y CONCLUSIONES -----------------
-\begin{frame}{Matriz de Trazabilidad y Siguiente Fase (Semana 5)}
+\begin{frame}{Trazabilidad del Proyecto y Próximos Pasos}
     \begin{columns}[t]
-        \begin{column}{0.52\textwidth}
-            \begin{block}{\textbf{Matriz de Trazabilidad Integral}}
+        \begin{column}{0.50\textwidth}
+            \begin{block}{\textbf{Matriz de Trazabilidad (Negocio $\rightarrow$ Software)}}
                 \scriptsize
-                \begin{tabular}{|c|c|c|}
+                \renewcommand{\arraystretch}{1.2}
+                \begin{tabularx}{\textwidth}{cLL}
                 \hline
-                \textbf{Objetivo} & \textbf{CUN} & \textbf{Requisitos (RF)} \\ \hline
-                ON-02 & CUN-01 Afiliación & RF01 \\ \hline
-                ON-01 & CUN-02 Cotización & RF02, RF03, RF04, RF05 \\ \hline
-                ON-03 & CUN-02 Cotización & RF06 (Observaciones) \\ \hline
-                ON-01 & CUN-03 Venta/Pago & RF07 (Pasarela) \\ \hline
-                ON-04 & CUN-04 Auditoría & RF08 (Filtro Fechas) \\ \hline
-                \end{tabular}
+                \textbf{Objetivo} & \textbf{Proceso del Negocio (CUN)} & \textbf{Requisitos de Software} \\ \hline
+                \textbf{ON-02} & CUN-01 Afiliación de Socios & \textbf{RF01} (Alta de socio) \\ \hline
+                \textbf{ON-01} & CUN-02 Cotización a Medida & \textbf{RF02} al \textbf{RF05} (Solicitud y armado) \\ \hline
+                \textbf{ON-03} & CUN-02 Cotización a Medida & \textbf{RF06} (Módulo de observaciones) \\ \hline
+                \textbf{ON-01} & CUN-03 Gestión de Pago & \textbf{RF07} (Pasarela bancaria) \\ \hline
+                \textbf{ON-04} & CUN-04 Auditoría de Viajes & \textbf{RF08} (Filtro por fechas) \\ \hline
+                \end{tabularx}
             \end{block}
         \end{column}
-        \begin{column}{0.45\textwidth}
-            \begin{exampleblock}{\textbf{Conexión a Semana 5 (Elaboración)}}
+        
+        \begin{column}{0.47\textwidth}
+            \begin{exampleblock}{\textbf{Próximos Pasos (Fase de Elaboración)}}
                 \small
                 \begin{itemize}
-                    \item Definición de Casos de Uso del Sistema (CUS).
-                    \item Especificación detallada de casos de uso (CUS).
-                    \item Diseño de prototipos GUI en Figma.
-                    \item Diagramas de Clases del Dominio y Clases de Análisis.
+                    \item \textbf{Casos de Uso del Sistema (CUS):} Especificación formal con flujos principales y alternativos.
+                    \item \textbf{Prototipos de Interfaz (UI/UX):} Diseño de pantallas y flujo de navegación en Figma.
+                    \item \textbf{Modelo del Dominio:} Diagrama de clases y entidades del sistema.
+                    \item \textbf{Arquitectura de Software:} Definición del stack tecnológico y modelo de datos relacional.
                 \end{itemize}
             \end{exampleblock}
         \end{column}
@@ -375,15 +415,26 @@
 \end{frame}
 
 % ----------------- SLIDE 16: REFERENCIAS BIBLIOGRÁFICAS -----------------
-\begin{frame}{Referencias Bibliográficas}
-    \footnotesize
-    \begin{thebibliography}{9}
-        \bibitem{garciamolina} García Molina, J. et al. (2000). De los Procesos del Negocio a los Casos de Uso. Univ. de Murcia.
-        \bibitem{rup2000} Jacobson, I., Booch, G., \& Rumbaugh, J. (2000). El Proceso Unificado de Desarrollo de Software. Addison-Wesley.
-        \bibitem{swebok2024} IEEE Computer Society (2024). SWEBOK v4: Guide to the Software Engineering Body of Knowledge.
-        \bibitem{pressman2015} Pressman, R. \& Maxim, B. (2015). Ingeniería del Software: Un enfoque práctico. McGraw-Hill.
-        \bibitem{mincetur2020} MINCETUR (2020). Reglamento de Agencias de Viajes y Turismo, D.S. N° 005-2020-MINCETUR.
-    \end{thebibliography}
+\begin{frame}{Referencias Bibliográficas y Fuentes Normativas}
+    \begin{block}{\textbf{Fundamento Metodológico y Estándares de Ingeniería}}
+        \footnotesize
+        \begin{itemize}
+            \item \textbf{García Molina, J. et al. (2000):} \textit{De los Procesos del Negocio a los Casos de Uso}. Univ. de Murcia. \\
+            \small $\rightarrow$ \textbf{Aporte:} Pautas de transición del modelo de negocio (CUN y Swimlanes) al software.
+            
+            \item \textbf{Jacobson, I., Booch, G., \& Rumbaugh, J. (2000):} \textit{El Proceso Unificado de Desarrollo}. Addison-Wesley. \\
+            \small $\rightarrow$ \textbf{Aporte:} Ciclo de vida RUP y máquina de estados del objeto cotización.
+            
+            \item \textbf{IEEE Computer Society (2024):} \textit{SWEBOK v4: Guide to the Software Engineering Body of Knowledge}. \\
+            \small $\rightarrow$ \textbf{Aporte:} Taxonomía formal y especificación técnica de requisitos de software (RF).
+            
+            \item \textbf{Pressman, R. \& Maxim, B. (2015):} \textit{Ingeniería del Software: Un enfoque práctico}. McGraw-Hill. \\
+            \small $\rightarrow$ \textbf{Aporte:} Clasificación de calidad FURPS+ para requisitos no funcionales.
+            
+            \item \textbf{MINCETUR (2020):} \textit{Reglamento de Agencias de Viajes y Turismo (D.S. N° 005-2020-MINCETUR)}. \\
+            \small $\rightarrow$ \textbf{Aporte:} Cumplimiento legal del sector turismo e identificación de partes interesadas.
+        \end{itemize}
+    \end{block}
 \end{frame}
 
 % ----------------- SLIDE 17: PREGUNTAS Y CIERRE -----------------
