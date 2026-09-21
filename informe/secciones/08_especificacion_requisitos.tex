@@ -1,22 +1,24 @@
 \section{Especificación de Requisitos de Software}
-Siguiendo las pautas de ingeniería de requisitos del SWEBOK~\cite{swebok2024}, % Cita: Guía del cuerpo de conocimiento de ingeniería de software (IEEE Computer Society)
-se formalizan los requisitos del sistema:
+Tomando como base los procesos organizacionales modelados y las directrices del cuerpo de conocimiento de ingeniería de software (SWEBOK v4)~\cite{swebok2024}, % Cita: Guía del cuerpo de conocimiento de ingeniería de software (IEEE Computer Society)
+se formalizan los requisitos funcionales, no funcionales y las reglas de negocio que delimitan el comportamiento del sistema SIGETUR:
 
 \subsection{Requisitos Funcionales (RF)}
+Los requisitos funcionales detallan las capacidades operativas directas que la plataforma provee a los distintos usuarios:
+
 \begin{table}[H]
 \centering
 \footnotesize
 \begin{tabularx}{\textwidth}{clLc}
 \toprule
-\textbf{Código} & \textbf{Requisito Funcional} & \textbf{Descripción Técnica} & \textbf{Rol} \\ \midrule
-\textbf{RF01} & Afiliación de Clientes & Registro de clientes no socios mediante formulario web validado. & No Socio \\ \midrule
-\textbf{RF02} & Registro de Solicitudes & Captura de destino, n° personas, fechas y horas de partida y regreso. & Socio \\ \midrule
-\textbf{RF03} & Emisión de Cotizaciones & Presupuestación de servicios y costos unitarios por el agente receptivo. & Agente \\ \midrule
-\textbf{RF04} & Consulta de Cotizaciones & Listado interactivo y comparativa de cotizaciones recibidas. & Socio \\ \midrule
-\textbf{RF05} & Aprobación de Cotización & Registro de aceptación formal de cotización seleccionada. & Socio \\ \midrule
-\textbf{RF06} & Registro de Observaciones & Ingreso de observaciones descriptivas a cotizaciones de su interés. & Socio \\ \midrule
-\textbf{RF07} & Procesamiento de Pago & Cobro digital con pasarela segura y emisión de constancia digital. & Socio \\ \midrule
-\textbf{RF08} & Consulta de Auditoría & Filtrado de cotizaciones canceladas o aceptadas con observaciones por rango de fechas. & Gerente / Agente \\ \bottomrule
+\textbf{Código} & \textbf{Requisito Funcional} & \textbf{Descripción Técnica} & \textbf{Rol Responsable} \\ \midrule
+\textbf{RF01} & Afiliación de Clientes & Registro de datos personales y validación automática de identidad para dar de alta a nuevos socios con credenciales de acceso. & Cliente No Socio \\ \midrule
+\textbf{RF02} & Registro de Solicitudes & Captura de destino, número de personas y fechas/horas exactas de partida y retorno con margen mayor a 48 horas. & Socio (Turista) \\ \midrule
+\textbf{RF03} & Emisión de Cotizaciones & Presupuestación detallada de servicios (transporte, hospedaje, excursiones) con cálculo automático de tarifas por el operador. & Agente Receptivo \\ \midrule
+\textbf{RF04} & Consulta de Cotizaciones & Visualización interactiva y comparativa del historial de cotizaciones recibidas con su desglose económico y estado actual. & Socio (Turista) \\ \midrule
+\textbf{RF05} & Aprobación de Cotización & Mecanismo formal de confirmación mediante el cual el socio valida la cotización seleccionada, cambiando su estado a Aprobada. & Socio (Turista) \\ \midrule
+\textbf{RF06} & Registro de Observaciones & Ingreso de comentarios descriptivos para solicitar reajustes en servicios, itinerario o costo, transitando el estado a Observada. & Socio (Turista) \\ \midrule
+\textbf{RF07} & Procesamiento de Pago & Transacción electrónica segura a través de pasarela bancaria externa y emisión automática de la constancia digital de viaje. & Socio (Turista) \\ \midrule
+\textbf{RF08} & Consulta de Auditoría & Filtrado cronológico y generación de reportes tabulares de cotizaciones canceladas y observadas para análisis y control. & Gerente / Agente \\ \bottomrule
 \end{tabularx}
 \caption{Catálogo de Requisitos Funcionales del sistema SIGETUR.}\label{tab:rf}
 \end{table}
@@ -27,33 +29,37 @@ se formalizan los requisitos del sistema:
 \footnotesize
 \begin{tabularx}{\textwidth}{clL}
 \toprule
-\textbf{Código} & \textbf{Categoría / Regla} & \textbf{Descripción y Criterio} \\ \midrule
-\textbf{RNF01} & Usabilidad & 100\% adaptativo responsive para escritorio y móviles ($\ge 360$ px). \\ \midrule
-\textbf{RNF02} & Rendimiento & Tiempos de respuesta $< 1.8$ s en el percentil 95. \\ \midrule
-\textbf{RNF03} & Seguridad & Cifrado HTTPS (TLS 1.3), control RBAC y passwords con Argon2id. \\ \midrule
-\textbf{RN01} & Condición de Socio & Solo usuarios en estado Socio activo pueden registrar solicitudes y cotizar. \\ \midrule
-\textbf{RN02} & Cronología de Viaje & Fecha de regreso estrictamente posterior a fecha de partida ($> 48$h anticipación). \\ \midrule
-\textbf{RN03} & Habilitación de Pago & Solo cotizaciones formalmente Aprobadas pueden recibir pagos. \\ \midrule
-\textbf{RN04} & Subsanación Observación & Cotizaciones observadas exigen reajuste del agente antes de re-aprobarse. \\ \midrule
-\textbf{RN05} & Privacidad de Auditoría & Módulo de auditoría por fechas restringido a Gerente y Agente Receptivo. \\ \bottomrule
+\textbf{Código} & \textbf{Categoría / Regla} & \textbf{Descripción Técnica y Criterio de Aceptación} \\ \midrule
+\textbf{RNF01} & Usabilidad & Interfaz web adaptativa (responsive) para terminales móviles y de escritorio ($\ge 360$\,px), completando el flujo en un máximo de 4 pasos. \\ \midrule
+\textbf{RNF02} & Rendimiento & Tiempos de respuesta menores a 1.8 segundos en el percentil 95 bajo una carga concurrente mínima de 100 usuarios activos. \\ \midrule
+\textbf{RNF03} & Seguridad & Canal de comunicación cifrado con HTTPS (TLS 1.3), control de acceso basado en roles (RBAC) y claves protegidas con algoritmo Argon2id. \\ \midrule
+\textbf{RNF04} & Confiabilidad & Disponibilidad del servicio de al menos 99.5\% mensual con copias de seguridad automáticas diarias de la base de datos transaccional. \\ \midrule
+\textbf{RN01} & Condición de Socio & Exclusividad operativa: únicamente los usuarios con estado Socio activo pueden registrar solicitudes y recibir presupuestos formales. \\ \midrule
+\textbf{RN02} & Cronología de Viaje & Consistencia temporal: la fecha de retorno debe ser estrictamente posterior a la de partida, con un plazo de anticipación mínimo de 48 horas. \\ \midrule
+\textbf{RN03} & Habilitación de Pago & Control transaccional: ninguna cotización puede procesar pagos ni comunicarse con la pasarela bancaria si no se encuentra en estado Aprobada. \\ \midrule
+\textbf{RN04} & Subsanación de Cambios & Ciclo de negociación: toda cotización observada exige que el agente receptivo formule una versión reajustada antes de volver a evaluarse. \\ \midrule
+\textbf{RN05} & Privacidad de Auditoría & Restricción de acceso: el módulo de trazabilidad y reportes de cancelaciones está reservado para el Agente Receptivo y el Gerente de Agencia. \\ \bottomrule
 \end{tabularx}
 \caption{Requisitos No Funcionales y Reglas de Negocio.}\label{tab:rn_rnf}
 \end{table}
 
-\subsection{Matriz de Trazabilidad: Negocio vs Requisitos}
+\subsection{Matriz de Trazabilidad: Negocio vs Requisitos} 
+Para garantizar que cada necesidad estratégica quede respaldada por componentes de software y gobernada por sus restricciones correspondientes, se establece la trazabilidad completa:
+
 \begin{table}[H]
 \centering
 \footnotesize
-\begin{tabularx}{\textwidth}{cLLc}
+\begin{tabularx}{\textwidth}{cLLcc}
 \toprule
-\textbf{Obj. Negocio} & \textbf{Caso Uso Negocio (CUN)} & \textbf{Característica Visión} & \textbf{Requisito (RF)} \\ \midrule
-ON-02 & CUN-01 Afiliación de Clientes & C01 Afiliación & RF01 \\ \midrule
-ON-01 & CUN-02 Cotizar Paquete & C02 Solicitud Paquete & RF02 \\ \midrule
-ON-01 & CUN-02 Cotizar Paquete & C03 Emisión Cotización & RF03 \\ \midrule
-ON-01 & CUN-02 Cotizar Paquete & C04 Consulta / Aprobación & RF04, RF05 \\ \midrule
-ON-03 & CUN-02 Cotizar Paquete & C05 Registro Observación & RF06 \\ \midrule
-ON-01, ON-02 & CUN-03 Venta y Pago & C06 Procesamiento Pago & RF07 \\ \midrule
-ON-04 & CUN-04 Auditar Cotizaciones & C07 Auditoría por Fechas & RF08 \\ \bottomrule
+\textbf{Obj. Negocio} & \textbf{Caso de Uso Negocio} & \textbf{Característica Visión} & \textbf{Requisito (RF)} & \textbf{Regla (RN)} \\
+\midrule
+\textbf{ON-02} & CUN-01 Afiliación de Clientes & C01 Afiliación de Socios & RF01 & RN01 \\ \midrule
+\textbf{ON-01} & CUN-02 Cotizar Paquete & C02 Solicitud de Paquetes & RF02 & RN01, RN02 \\ \midrule
+\textbf{ON-01} & CUN-02 Cotizar Paquete & C03 Emisión de Cotizaciones & RF03 & RN02 \\ \midrule
+\textbf{ON-01} & CUN-02 Cotizar Paquete & C04 Aprobación de Cotización & RF04, RF05 & RN03, RN04 \\ \midrule
+\textbf{ON-03} & CUN-02 Cotizar Paquete & C05 Gestión de Observaciones & RF06 & RN04 \\ \midrule
+\textbf{ON-01, ON-02} & CUN-03 Venta y Pago & C06 Procesamiento de Pagos & RF07 & RN03 \\ \midrule
+\textbf{ON-04} & CUN-04 Auditar Cotizaciones & C07 Auditoría por Fechas & RF08 & RN05 \\ \bottomrule
 \end{tabularx}
-\caption{Matriz de trazabilidad integral entre el Negocio y el Software.}\label{tab:trazabilidad}
+\caption{Matriz de trazabilidad integral entre Objetivos, Procesos, Requisitos y Reglas.}\label{tab:trazabilidad}
 \end{table}
