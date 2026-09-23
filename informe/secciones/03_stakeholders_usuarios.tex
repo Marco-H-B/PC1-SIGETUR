@@ -33,6 +33,30 @@
 \caption{Resumen de usuarios directos del sistema.}\label{tab:usuarios}
 \end{table}
 
+\subsection{Entorno del Usuario}
+El entorno operativo de SIGETUR se divide en dos ecosistemas de trabajo:
+\begin{itemize}[noitemsep]
+    \item \textbf{Usuarios Externos (Turistas):} Acceso desde smartphones y laptops ($\ge 360$\,px), conectividad móvil 4G/5G y Wi-Fi tolerante a latencia, con disponibilidad 24/7 para solicitudes y pagos breves (2 a 5\,min).
+    \item \textbf{Usuarios Internos (Agencia):} Estaciones fijas y laptops corporativas con monitores Full HD (1080p), conexión cableada LAN Ethernet de alta velocidad, y jornada comercial de 8 horas con meta de respuesta $< 4$\,h (ON-01).
+    \item \textbf{Integración y Capacidad:} Pasarela bancaria segura bajo HTTPS / TLS 1.3 y soporte garantizado para al menos 100 usuarios activos simultáneos.
+\end{itemize}
+
+\begin{table}[H]
+\centering
+\scriptsize
+\begin{tabularx}{\textwidth}{llLL}
+\toprule
+\textbf{Rol / Usuario} & \textbf{Dispositivos y SO} & \textbf{Navegador / Interfaz} & \textbf{Conectividad y Ciclo de Trabajo} \\
+\midrule
+\textbf{Cliente No Socio} & Smartphones, tablets, PC (Android, iOS, Win, macOS) & Google Chrome, Safari, Edge ($\ge 360$\,px) & Red móvil 4G/5G o Wi-Fi. Acceso 24/7 para consulta y registro ($\sim 2$\,min). \\ \midrule
+\textbf{Socio (Turista)} & Smartphones, tablets, laptops (Android, iOS, Win, macOS) & Google Chrome, Safari, Edge ($\ge 360$\,px) & Red móvil 4G/5G o Wi-Fi hotelero. Acceso 24/7 para solicitudes, evaluación y pagos ($\sim 5$\,min). \\ \midrule
+\textbf{Agente Receptivo} & Estaciones de trabajo y laptops (Win 10/11, macOS, Full HD) & Google Chrome, Mozilla Firefox (Web Desktop) & Red LAN corporativa de alta velocidad. Jornada de 8h; atención de cotizaciones $< 4$\,h (ON-01). \\ \midrule
+\textbf{Gerente Agencia} & Laptops ejecutivas y PC oficina (Win 10/11, macOS, Full HD) & Google Chrome, Mozilla Firefox (Web Desktop) & Conexión segura institucional. Consultas periódicas de auditoría por rangos de fecha y control. \\
+\bottomrule
+\end{tabularx}
+\caption{Matriz del entorno operativo de los usuarios de SIGETUR.}\label{tab:entorno_usuario}
+\end{table}
+
 \subsection{Necesidades Clave y Competencia}
 \begin{table}[H]
 \centering
